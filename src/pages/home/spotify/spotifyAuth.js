@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect } from "react";
 
 const SPOTIFY_AUTHORIZE_ENDPOINT = "https://accounts.spotify.com/authorize";
-const REDIRECT_URI = 'http://localhost:3000/'
+const REDIRECT_URI = 'https://moodpalette.onrender.com/'
 const CLIENT_ID = "1f57088263ff49bebe219245a8e8c6c9" //TODO: figure out why process.env.SPOTIFY_CLIENT_ID doesn't work
 const SCOPES = ['user-read-private', 'user-top-read', 'user-read-email', 'user-read-playback-state', 'playlist-modify-public', 'playlist-modify-private']
 const SCOPES_URL = SCOPES.join("%20");
@@ -19,7 +19,7 @@ function SpotifyAuth() {
 
                 if (stateValue === STATE && codeKey === "code") {
                     try {
-                        axios.post("/spotify/generateAccessToken", { code : codeValue });
+                        axios.post("https://moodpalette-api.onrender.com/api/spotify/generateAccessToken", { code : codeValue });
                     } catch (err) {
                         console.log(err);
                     }
