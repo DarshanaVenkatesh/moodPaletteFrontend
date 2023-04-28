@@ -65,5 +65,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://moodpalette-api.onrender.com"
+  "proxy": "https://moodpalette-api.onrender.com/"
+
+  
 }
